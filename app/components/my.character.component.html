@@ -1,0 +1,19 @@
+<h2 *ngIf="character" (click)="select(character)">This is my Character {{character.name}}</h2>
+
+<h3>{{vehicleDetails.name}}</h3>
+<h3>{{vehicleDetails.model}}</h3>
+<h3>{{vehicleDetails.colour}}</h3>
+<img src="{{vehicleDetails.image}}"/>
+<a href="{{vehicleDetails.url}}"> </a>
+<h4>This is optional non existing property {{vehicleDetails?.propertyNotExist}}</h4>
+
+<img [src]="vehicleDetails.image"/>
+<div [ngClass]="{selected: !!vehicleDetails.name}"></div>
+<button [style.colour]="true ? 'blue':'red'">AAA</button>
+<button [attr.aria-label]="ok">AAA</button>
+
+<input type="text" [value]="vehicleDetails.name" (input)="vehicleDetails.name = $event.target.value">
+<label>{{vehicleDetails.name | uppercase}}</label>
+<br>
+<label [(style.background)]="colour">colour</label>
+<input type="text" [(ngModel)]="colour">
